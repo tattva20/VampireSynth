@@ -1,13 +1,13 @@
 //
-//  Force1UITests.swift
-//  Force1UITests
+//  VampireSynthUITests.swift
+//  VampireSynthUITests
 //
 //  Created by Octavio Rojas on 8/29/24.
 //
 
 import XCTest
 
-final class Force1UITests: XCTestCase {
+final class VampireSynthUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

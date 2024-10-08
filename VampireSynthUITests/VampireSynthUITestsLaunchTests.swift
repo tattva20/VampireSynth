@@ -1,13 +1,13 @@
 //
-//  Force1UITestsLaunchTests.swift
-//  Force1UITests
+//  VampireSynthUITestsLaunchTests.swift
+//  VampireSynthUITests
 //
 //  Created by Octavio Rojas on 8/29/24.
 //
 
 import XCTest
 
-final class Force1UITestsLaunchTests: XCTestCase {
+final class VampireSynthUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -7,13 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E2C18F52C818DAD00CADD9F /* Force1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C18F42C818DAD00CADD9F /* Force1App.swift */; };
-		6E2C18F72C818DAD00CADD9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C18F62C818DAD00CADD9F /* ContentView.swift */; };
 		6E2C18F92C818DB200CADD9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2C18F82C818DB200CADD9F /* Assets.xcassets */; };
 		6E2C18FC2C818DB200CADD9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2C18FB2C818DB200CADD9F /* Preview Assets.xcassets */; };
-		6E2C19062C818DB600CADD9F /* Force1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C19052C818DB600CADD9F /* Force1Tests.swift */; };
-		6E2C19102C818DB700CADD9F /* Force1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C190F2C818DB700CADD9F /* Force1UITests.swift */; };
-		6E2C19122C818DB700CADD9F /* Force1UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C19112C818DB700CADD9F /* Force1UITestsLaunchTests.swift */; };
+		6E2C19062C818DB600CADD9F /* VampireSynthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C19052C818DB600CADD9F /* VampireSynthTests.swift */; };
+		6E2C19102C818DB700CADD9F /* VampireSynthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C190F2C818DB700CADD9F /* VampireSynthUITests.swift */; };
+		6E2C19122C818DB700CADD9F /* VampireSynthUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2C19112C818DB700CADD9F /* VampireSynthUITestsLaunchTests.swift */; };
+		6E2C19202C818E0300CADD9F /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E2C191F2C818E0300CADD9F /* AudioKit */; };
+		6E2C19232C818FB800CADD9F /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 6E2C19222C818FB800CADD9F /* AudioKitEX */; };
+		6E2C19262C8191D100CADD9F /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E2C19252C8191D100CADD9F /* SoundpipeAudioKit */; };
+		6E2C19292C81932300CADD9F /* AudioKitUI in Frameworks */ = {isa = PBXBuildFile; productRef = 6E2C19282C81932300CADD9F /* AudioKitUI */; };
+		6E2FBDC32C8540BA00854FB3 /* VampireKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2FBDC22C8540BA00854FB3 /* VampireKeyboardView.swift */; };
+		6E2FFFAD2C85058E00FD9BC9 /* Keyboard in Frameworks */ = {isa = PBXBuildFile; productRef = 6E2FFFAC2C85058E00FD9BC9 /* Keyboard */; };
+		6E2FFFBC2C850BE900FD9BC9 /* VampireSynthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2FFFBA2C850BE900FD9BC9 /* VampireSynthApp.swift */; };
+		6E2FFFBD2C850BE900FD9BC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2FFFBB2C850BE900FD9BC9 /* ContentView.swift */; };
+		6EEEB2A62C85185200E1E8FC /* OperatorConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A52C85185200E1E8FC /* OperatorConductor.swift */; };
+		6EEEB2A82C8518DA00E1E8FC /* OperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A72C8518DA00E1E8FC /* OperatorView.swift */; };
+		6EEEB2AA2C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A92C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift */; };
+		6EEEB2AE2C85298400E1E8FC /* AmplitudeEnvelopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2AD2C85298400E1E8FC /* AmplitudeEnvelopeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +44,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E2C18F12C818DAD00CADD9F /* Force1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Force1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E2C18F42C818DAD00CADD9F /* Force1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Force1App.swift; sourceTree = "<group>"; };
-		6E2C18F62C818DAD00CADD9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6E2C18F12C818DAD00CADD9F /* VampireSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VampireSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2C18F82C818DB200CADD9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E2C18FB2C818DB200CADD9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		6E2C19012C818DB600CADD9F /* Force1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Force1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E2C19052C818DB600CADD9F /* Force1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Force1Tests.swift; sourceTree = "<group>"; };
-		6E2C190B2C818DB700CADD9F /* Force1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Force1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E2C190F2C818DB700CADD9F /* Force1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Force1UITests.swift; sourceTree = "<group>"; };
-		6E2C19112C818DB700CADD9F /* Force1UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Force1UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6E2C19012C818DB600CADD9F /* VampireSynthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VampireSynthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E2C19052C818DB600CADD9F /* VampireSynthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VampireSynthTests.swift; sourceTree = "<group>"; };
+		6E2C190B2C818DB700CADD9F /* VampireSynthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VampireSynthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E2C190F2C818DB700CADD9F /* VampireSynthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VampireSynthUITests.swift; sourceTree = "<group>"; };
+		6E2C19112C818DB700CADD9F /* VampireSynthUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VampireSynthUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6E2FBDC22C8540BA00854FB3 /* VampireKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VampireKeyboardView.swift; sourceTree = "<group>"; };
+		6E2FFFBA2C850BE900FD9BC9 /* VampireSynthApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VampireSynthApp.swift; sourceTree = "<group>"; };
+		6E2FFFBB2C850BE900FD9BC9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6EEEB2A52C85185200E1E8FC /* OperatorConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorConductor.swift; sourceTree = "<group>"; };
+		6EEEB2A72C8518DA00E1E8FC /* OperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorView.swift; sourceTree = "<group>"; };
+		6EEEB2A92C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeEnvelopeConductor.swift; sourceTree = "<group>"; };
+		6EEEB2AD2C85298400E1E8FC /* AmplitudeEnvelopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeEnvelopeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +66,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E2C19202C818E0300CADD9F /* AudioKit in Frameworks */,
+				6E2C19232C818FB800CADD9F /* AudioKitEX in Frameworks */,
+				6E2FFFAD2C85058E00FD9BC9 /* Keyboard in Frameworks */,
+				6E2C19292C81932300CADD9F /* AudioKitUI in Frameworks */,
+				6E2C19262C8191D100CADD9F /* SoundpipeAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +94,9 @@
 		6E2C18E82C818DAD00CADD9F = {
 			isa = PBXGroup;
 			children = (
-				6E2C18F32C818DAD00CADD9F /* Force1 */,
-				6E2C19042C818DB600CADD9F /* Force1Tests */,
-				6E2C190E2C818DB700CADD9F /* Force1UITests */,
+				6E2C18F32C818DAD00CADD9F /* VampireSynth */,
+				6E2C19042C818DB600CADD9F /* VampireSynthTests */,
+				6E2C190E2C818DB700CADD9F /* VampireSynthUITests */,
 				6E2C18F22C818DAD00CADD9F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,22 +104,27 @@
 		6E2C18F22C818DAD00CADD9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E2C18F12C818DAD00CADD9F /* Force1.app */,
-				6E2C19012C818DB600CADD9F /* Force1Tests.xctest */,
-				6E2C190B2C818DB700CADD9F /* Force1UITests.xctest */,
+				6E2C18F12C818DAD00CADD9F /* VampireSynth.app */,
+				6E2C19012C818DB600CADD9F /* VampireSynthTests.xctest */,
+				6E2C190B2C818DB700CADD9F /* VampireSynthUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6E2C18F32C818DAD00CADD9F /* Force1 */ = {
+		6E2C18F32C818DAD00CADD9F /* VampireSynth */ = {
 			isa = PBXGroup;
 			children = (
-				6E2C18F42C818DAD00CADD9F /* Force1App.swift */,
-				6E2C18F62C818DAD00CADD9F /* ContentView.swift */,
+				6E2FFFBB2C850BE900FD9BC9 /* ContentView.swift */,
+				6E2FBDC22C8540BA00854FB3 /* VampireKeyboardView.swift */,
+				6EEEB2A52C85185200E1E8FC /* OperatorConductor.swift */,
+				6EEEB2A92C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift */,
+				6EEEB2AD2C85298400E1E8FC /* AmplitudeEnvelopeView.swift */,
+				6EEEB2A72C8518DA00E1E8FC /* OperatorView.swift */,
+				6E2FFFBA2C850BE900FD9BC9 /* VampireSynthApp.swift */,
 				6E2C18F82C818DB200CADD9F /* Assets.xcassets */,
 				6E2C18FA2C818DB200CADD9F /* Preview Content */,
 			);
-			path = Force1;
+			path = VampireSynth;
 			sourceTree = "<group>";
 		};
 		6E2C18FA2C818DB200CADD9F /* Preview Content */ = {
@@ -110,29 +135,29 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		6E2C19042C818DB600CADD9F /* Force1Tests */ = {
+		6E2C19042C818DB600CADD9F /* VampireSynthTests */ = {
 			isa = PBXGroup;
 			children = (
-				6E2C19052C818DB600CADD9F /* Force1Tests.swift */,
+				6E2C19052C818DB600CADD9F /* VampireSynthTests.swift */,
 			);
-			path = Force1Tests;
+			path = VampireSynthTests;
 			sourceTree = "<group>";
 		};
-		6E2C190E2C818DB700CADD9F /* Force1UITests */ = {
+		6E2C190E2C818DB700CADD9F /* VampireSynthUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6E2C190F2C818DB700CADD9F /* Force1UITests.swift */,
-				6E2C19112C818DB700CADD9F /* Force1UITestsLaunchTests.swift */,
+				6E2C190F2C818DB700CADD9F /* VampireSynthUITests.swift */,
+				6E2C19112C818DB700CADD9F /* VampireSynthUITestsLaunchTests.swift */,
 			);
-			path = Force1UITests;
+			path = VampireSynthUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E2C18F02C818DAD00CADD9F /* Force1 */ = {
+		6E2C18F02C818DAD00CADD9F /* VampireSynth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E2C19152C818DB700CADD9F /* Build configuration list for PBXNativeTarget "Force1" */;
+			buildConfigurationList = 6E2C19152C818DB700CADD9F /* Build configuration list for PBXNativeTarget "VampireSynth" */;
 			buildPhases = (
 				6E2C18ED2C818DAD00CADD9F /* Sources */,
 				6E2C18EE2C818DAD00CADD9F /* Frameworks */,
@@ -142,14 +167,21 @@
 			);
 			dependencies = (
 			);
-			name = Force1;
+			name = VampireSynth;
+			packageProductDependencies = (
+				6E2C191F2C818E0300CADD9F /* AudioKit */,
+				6E2C19222C818FB800CADD9F /* AudioKitEX */,
+				6E2C19252C8191D100CADD9F /* SoundpipeAudioKit */,
+				6E2C19282C81932300CADD9F /* AudioKitUI */,
+				6E2FFFAC2C85058E00FD9BC9 /* Keyboard */,
+			);
 			productName = Force1;
-			productReference = 6E2C18F12C818DAD00CADD9F /* Force1.app */;
+			productReference = 6E2C18F12C818DAD00CADD9F /* VampireSynth.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E2C19002C818DB600CADD9F /* Force1Tests */ = {
+		6E2C19002C818DB600CADD9F /* VampireSynthTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E2C19182C818DB700CADD9F /* Build configuration list for PBXNativeTarget "Force1Tests" */;
+			buildConfigurationList = 6E2C19182C818DB700CADD9F /* Build configuration list for PBXNativeTarget "VampireSynthTests" */;
 			buildPhases = (
 				6E2C18FD2C818DB600CADD9F /* Sources */,
 				6E2C18FE2C818DB600CADD9F /* Frameworks */,
@@ -160,14 +192,14 @@
 			dependencies = (
 				6E2C19032C818DB600CADD9F /* PBXTargetDependency */,
 			);
-			name = Force1Tests;
+			name = VampireSynthTests;
 			productName = Force1Tests;
-			productReference = 6E2C19012C818DB600CADD9F /* Force1Tests.xctest */;
+			productReference = 6E2C19012C818DB600CADD9F /* VampireSynthTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6E2C190A2C818DB700CADD9F /* Force1UITests */ = {
+		6E2C190A2C818DB700CADD9F /* VampireSynthUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E2C191B2C818DB700CADD9F /* Build configuration list for PBXNativeTarget "Force1UITests" */;
+			buildConfigurationList = 6E2C191B2C818DB700CADD9F /* Build configuration list for PBXNativeTarget "VampireSynthUITests" */;
 			buildPhases = (
 				6E2C19072C818DB700CADD9F /* Sources */,
 				6E2C19082C818DB700CADD9F /* Frameworks */,
@@ -178,9 +210,9 @@
 			dependencies = (
 				6E2C190D2C818DB700CADD9F /* PBXTargetDependency */,
 			);
-			name = Force1UITests;
+			name = VampireSynthUITests;
 			productName = Force1UITests;
-			productReference = 6E2C190B2C818DB700CADD9F /* Force1UITests.xctest */;
+			productReference = 6E2C190B2C818DB700CADD9F /* VampireSynthUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -195,6 +227,7 @@
 				TargetAttributes = {
 					6E2C18F02C818DAD00CADD9F = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 					};
 					6E2C19002C818DB600CADD9F = {
 						CreatedOnToolsVersion = 15.4;
@@ -206,7 +239,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E2C18EC2C818DAD00CADD9F /* Build configuration list for PBXProject "Force1" */;
+			buildConfigurationList = 6E2C18EC2C818DAD00CADD9F /* Build configuration list for PBXProject "VampireSynth" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,13 +248,20 @@
 				Base,
 			);
 			mainGroup = 6E2C18E82C818DAD00CADD9F;
+			packageReferences = (
+				6E2C191E2C818E0300CADD9F /* XCRemoteSwiftPackageReference "AudioKit" */,
+				6E2C19212C818FB800CADD9F /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+				6E2C19242C8191D100CADD9F /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				6E2C19272C81932300CADD9F /* XCRemoteSwiftPackageReference "AudioKitUI" */,
+				6E2FFFAB2C85058E00FD9BC9 /* XCRemoteSwiftPackageReference "Keyboard" */,
+			);
 			productRefGroup = 6E2C18F22C818DAD00CADD9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E2C18F02C818DAD00CADD9F /* Force1 */,
-				6E2C19002C818DB600CADD9F /* Force1Tests */,
-				6E2C190A2C818DB700CADD9F /* Force1UITests */,
+				6E2C18F02C818DAD00CADD9F /* VampireSynth */,
+				6E2C19002C818DB600CADD9F /* VampireSynthTests */,
+				6E2C190A2C818DB700CADD9F /* VampireSynthUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,8 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2C18F72C818DAD00CADD9F /* ContentView.swift in Sources */,
-				6E2C18F52C818DAD00CADD9F /* Force1App.swift in Sources */,
+				6EEEB2A82C8518DA00E1E8FC /* OperatorView.swift in Sources */,
+				6E2FFFBD2C850BE900FD9BC9 /* ContentView.swift in Sources */,
+				6E2FBDC32C8540BA00854FB3 /* VampireKeyboardView.swift in Sources */,
+				6EEEB2A62C85185200E1E8FC /* OperatorConductor.swift in Sources */,
+				6E2FFFBC2C850BE900FD9BC9 /* VampireSynthApp.swift in Sources */,
+				6EEEB2AE2C85298400E1E8FC /* AmplitudeEnvelopeView.swift in Sources */,
+				6EEEB2AA2C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2C19062C818DB600CADD9F /* Force1Tests.swift in Sources */,
+				6E2C19062C818DB600CADD9F /* VampireSynthTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +319,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2C19122C818DB700CADD9F /* Force1UITestsLaunchTests.swift in Sources */,
-				6E2C19102C818DB700CADD9F /* Force1UITests.swift in Sources */,
+				6E2C19122C818DB700CADD9F /* VampireSynthUITestsLaunchTests.swift in Sources */,
+				6E2C19102C818DB700CADD9F /* VampireSynthUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,12 +329,12 @@
 /* Begin PBXTargetDependency section */
 		6E2C19032C818DB600CADD9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E2C18F02C818DAD00CADD9F /* Force1 */;
+			target = 6E2C18F02C818DAD00CADD9F /* VampireSynth */;
 			targetProxy = 6E2C19022C818DB600CADD9F /* PBXContainerItemProxy */;
 		};
 		6E2C190D2C818DB700CADD9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E2C18F02C818DAD00CADD9F /* Force1 */;
+			target = 6E2C18F02C818DAD00CADD9F /* VampireSynth */;
 			targetProxy = 6E2C190C2C818DB700CADD9F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -419,9 +464,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Force1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VampireSynth/Preview Content\"";
 				DEVELOPMENT_TEAM = U8KG77NYQD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -435,9 +481,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tattvamusic.Force1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tattvamusic.vampiresynth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,9 +495,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Force1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"VampireSynth/Preview Content\"";
 				DEVELOPMENT_TEAM = U8KG77NYQD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -464,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tattvamusic.Force1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tattvamusic.vampiresynth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -488,7 +536,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Force1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Force1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VampireSynth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VampireSynth";
 			};
 			name = Debug;
 		};
@@ -508,7 +556,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Force1.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Force1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VampireSynth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VampireSynth";
 			};
 			name = Release;
 		};
@@ -551,7 +599,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E2C18EC2C818DAD00CADD9F /* Build configuration list for PBXProject "Force1" */ = {
+		6E2C18EC2C818DAD00CADD9F /* Build configuration list for PBXProject "VampireSynth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E2C19132C818DB700CADD9F /* Debug */,
@@ -560,7 +608,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E2C19152C818DB700CADD9F /* Build configuration list for PBXNativeTarget "Force1" */ = {
+		6E2C19152C818DB700CADD9F /* Build configuration list for PBXNativeTarget "VampireSynth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E2C19162C818DB700CADD9F /* Debug */,
@@ -569,7 +617,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E2C19182C818DB700CADD9F /* Build configuration list for PBXNativeTarget "Force1Tests" */ = {
+		6E2C19182C818DB700CADD9F /* Build configuration list for PBXNativeTarget "VampireSynthTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E2C19192C818DB700CADD9F /* Debug */,
@@ -578,7 +626,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E2C191B2C818DB700CADD9F /* Build configuration list for PBXNativeTarget "Force1UITests" */ = {
+		6E2C191B2C818DB700CADD9F /* Build configuration list for PBXNativeTarget "VampireSynthUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E2C191C2C818DB700CADD9F /* Debug */,
@@ -588,6 +636,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E2C191E2C818E0300CADD9F /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+		6E2C19212C818FB800CADD9F /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		6E2C19242C8191D100CADD9F /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.1;
+			};
+		};
+		6E2C19272C81932300CADD9F /* XCRemoteSwiftPackageReference "AudioKitUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.7;
+			};
+		};
+		6E2FFFAB2C85058E00FD9BC9 /* XCRemoteSwiftPackageReference "Keyboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/Keyboard";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E2C191F2C818E0300CADD9F /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E2C191E2C818E0300CADD9F /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+		6E2C19222C818FB800CADD9F /* AudioKitEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E2C19212C818FB800CADD9F /* XCRemoteSwiftPackageReference "AudioKitEX" */;
+			productName = AudioKitEX;
+		};
+		6E2C19252C8191D100CADD9F /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E2C19242C8191D100CADD9F /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
+		};
+		6E2C19282C81932300CADD9F /* AudioKitUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E2C19272C81932300CADD9F /* XCRemoteSwiftPackageReference "AudioKitUI" */;
+			productName = AudioKitUI;
+		};
+		6E2FFFAC2C85058E00FD9BC9 /* Keyboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E2FFFAB2C85058E00FD9BC9 /* XCRemoteSwiftPackageReference "Keyboard" */;
+			productName = Keyboard;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E2C18E92C818DAD00CADD9F /* Project object */;
 }

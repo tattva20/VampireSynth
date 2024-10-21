@@ -18,27 +18,37 @@ struct OperatorView: View {
     
     @State private var isRowABCollapsed = false
     @State private var isRowCDCollapsed = false
+
+    // Custom bindings for operator properties
+    private func synthOperator(_ index: Int) -> (Binding<Float>, Binding<Float>, Binding<Float>, Binding<Float>) {
+        (
+            $conductor.operators[index].modulatingFrequency,
+            $conductor.operators[index].modulatingMultiplier,
+            $conductor.operators[index].modulationIndex,
+            $conductor.operators[index].amplitude
+        )
+    }
     
     var body: some View {
         VStack {
             // Operator A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isRowABCollapsed) {
                 HStack {
-                    let a = 0
-                    let b = 1
+                    let (modFreqA, modMultA, modIndexA, ampA) = synthOperator(a)
+                    let (modFreqB, modMultB, modIndexB, ampB) = synthOperator(b)
                     OperatorControlView(
                         title: "Operator A",
-                        modulatingFrequency: $conductor.operators[a].modulatingFrequency,
-                        modulatingMultiplier: $conductor.operators[a].modulatingMultiplier,
-                        modulationIndex: $conductor.operators[a].modulationIndex,
-                        amplitude: $conductor.operators[a].amplitude
+                        modulatingFrequency: modFreqA,
+                        modulatingMultiplier: modMultA,
+                        modulationIndex: modIndexA,
+                        amplitude: ampA
                     )
                     OperatorControlView(
                         title: "Operator B",
-                        modulatingFrequency: $conductor.operators[b].modulatingFrequency,
-                        modulatingMultiplier: $conductor.operators[b].modulatingMultiplier,
-                        modulationIndex: $conductor.operators[b].modulationIndex,
-                        amplitude: $conductor.operators[b].amplitude
+                        modulatingFrequency: modFreqB,
+                        modulatingMultiplier: modMultB,
+                        modulationIndex: modIndexB,
+                        amplitude: ampB
                     )
                 }
             } label: {
@@ -59,21 +69,21 @@ struct OperatorView: View {
             // Operator C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isRowCDCollapsed) {
                 HStack {
-                    let c = 2
-                    let d = 3
+                    let (modFreqC, modMultC, modIndexC, ampC) = synthOperator(c)
+                    let (modFreqD, modMultD, modIndexD, ampD) = synthOperator(d)
                     OperatorControlView(
                         title: "Operator C",
-                        modulatingFrequency: $conductor.operators[c].modulatingFrequency,
-                        modulatingMultiplier: $conductor.operators[c].modulatingMultiplier,
-                        modulationIndex: $conductor.operators[c].modulationIndex,
-                        amplitude: $conductor.operators[c].amplitude
+                        modulatingFrequency: modFreqC,
+                        modulatingMultiplier: modMultC,
+                        modulationIndex: modIndexC,
+                        amplitude: ampC
                     )
                     OperatorControlView(
                         title: "Operator D",
-                        modulatingFrequency: $conductor.operators[d].modulatingFrequency,
-                        modulatingMultiplier: $conductor.operators[d].modulatingMultiplier,
-                        modulationIndex: $conductor.operators[d].modulationIndex,
-                        amplitude: $conductor.operators[d].amplitude
+                        modulatingFrequency: modFreqD,
+                        modulatingMultiplier: modMultD,
+                        modulationIndex: modIndexD,
+                        amplitude: ampD
                     )
                 }
             } label: {
@@ -96,6 +106,7 @@ struct OperatorView: View {
         Text("Octave Shift: \(conductor.octaveShift)")
             .foregroundColor(.white)
         Stepper(value: $conductor.octaveShift, in: -2...3) {}
+        .accessibilityLabel("Octave Shift")
     }
 }
 

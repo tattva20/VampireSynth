@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SoundpipeAudioKit
 
 struct AmplitudeEnvelopeView: View {
     @ObservedObject var conductor: AmplitudeEnvelopeConductor
@@ -14,15 +15,18 @@ struct AmplitudeEnvelopeView: View {
     @State private var isEnvelopeABCollapsed = false
     @State private var isEnvelopeCDCollapsed = false
     
+    private func envelopeForOperator(_ index: Int) -> Binding<AmplitudeEnvelope> {
+        return $conductor.envelopes[index]
+    }
+    
     var body: some View {
         VStack {
             // Envelope A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeABCollapsed) {
                 HStack {
-                    let a = 0
-                    let b = 1
-                    ADSRWidgetView(title: "Amplitude Envelope A", envelope: $conductor.envelopes[a])
-                    ADSRWidgetView(title: "Amplitude Envelope B", envelope: $conductor.envelopes[b])
+
+                    ADSRWidgetView(title: "Amplitude Envelope A", envelope: envelopeForOperator(a))
+                    ADSRWidgetView(title: "Amplitude Envelope B", envelope: envelopeForOperator(b))
                 }
             } label: {
                 HStack {
@@ -42,10 +46,8 @@ struct AmplitudeEnvelopeView: View {
             // Envelope C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeCDCollapsed) {
                 HStack {
-                    let c = 2
-                    let d = 3
-                    ADSRWidgetView(title: "Amplitude Envelope C", envelope: $conductor.envelopes[c])
-                    ADSRWidgetView(title: "Amplitude Envelope D", envelope: $conductor.envelopes[d])
+                    ADSRWidgetView(title: "Amplitude Envelope C", envelope: envelopeForOperator(c))
+                    ADSRWidgetView(title: "Amplitude Envelope D", envelope: envelopeForOperator(d))
                 }
             } label: {
                 HStack {
@@ -63,6 +65,7 @@ struct AmplitudeEnvelopeView: View {
         }
         .padding()
         .background(Color.clear)
+        .accessibilityElement(children: .contain)
     }
 }
 

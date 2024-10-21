@@ -26,10 +26,14 @@ struct AmplitudeEnvelopeView: View {
                             .font(.title)
                             .foregroundColor(.white)
                         ADSRWidget { att, dec, sus, rel in
-                            conductor.envelopeA.attackDuration = att
-                            conductor.envelopeA.decayDuration = dec
-                            conductor.envelopeA.sustainLevel = sus
-                            conductor.envelopeA.releaseDuration = rel
+                            
+                            let a = 0
+                            let envelopeA = conductor.envelopes[a]
+                            
+                            envelopeA.attackDuration = att
+                            envelopeA.decayDuration = dec
+                            envelopeA.sustainLevel = sus
+                            envelopeA.releaseDuration = rel
                         }
                     }
                     
@@ -38,10 +42,14 @@ struct AmplitudeEnvelopeView: View {
                             .font(.title)
                             .foregroundColor(.white)
                         ADSRWidget { att, dec, sus, rel in
-                            conductor.envelopeB.attackDuration = att
-                            conductor.envelopeB.decayDuration = dec
-                            conductor.envelopeB.sustainLevel = sus
-                            conductor.envelopeB.releaseDuration = rel
+                            
+                            let b = 1
+                            let envelopeB = conductor.envelopes[b]
+                            
+                            envelopeB.attackDuration = att
+                            envelopeB.decayDuration = dec
+                            envelopeB.sustainLevel = sus
+                            envelopeB.releaseDuration = rel
                         }
                     }
                 }
@@ -68,10 +76,14 @@ struct AmplitudeEnvelopeView: View {
                             .font(.title)
                             .foregroundColor(.white)
                         ADSRWidget { att, dec, sus, rel in
-                            conductor.envelopeC.attackDuration = att
-                            conductor.envelopeC.decayDuration = dec
-                            conductor.envelopeC.sustainLevel = sus
-                            conductor.envelopeC.releaseDuration = rel
+                            
+                            let c = 2
+                            let envelopeC = conductor.envelopes[c]
+                            
+                            envelopeC.attackDuration = att
+                            envelopeC.decayDuration = dec
+                            envelopeC.sustainLevel = sus
+                            envelopeC.releaseDuration = rel
                         }
                     }
                     
@@ -80,10 +92,14 @@ struct AmplitudeEnvelopeView: View {
                             .font(.title)
                             .foregroundColor(.white)
                         ADSRWidget { att, dec, sus, rel in
-                            conductor.envelopeD.attackDuration = att
-                            conductor.envelopeD.decayDuration = dec
-                            conductor.envelopeD.sustainLevel = sus
-                            conductor.envelopeD.releaseDuration = rel
+                            
+                            let d = 3
+                            let envelopeD = conductor.envelopes[d]
+                            
+                            envelopeD.attackDuration = att
+                            envelopeD.decayDuration = dec
+                            envelopeD.sustainLevel = sus
+                            envelopeD.releaseDuration = rel
                         }
                     }
                 }

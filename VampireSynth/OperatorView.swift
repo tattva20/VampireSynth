@@ -32,18 +32,20 @@ struct OperatorView: View {
                             .padding(.top)
                             .padding(.bottom)
                         
-                        Text("Mod. Frequency: \(Int(conductor.modulatingFrequencyA)) Hz")
+                        let a = 0
+                        
+                        Text("Mod. Frequency: \(Int(conductor.operators[a].modulatingFrequency)) Hz")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingFrequencyA, in: 20...2000)
-                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.modulatingMultiplierA))")
+                        Slider(value: $conductor.operators[a].modulatingFrequency, in: 20...2000)
+                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.operators[0].modulatingMultiplier))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingMultiplierA, in: 0.1...10)
-                        Text("Mod. Index: \(Int(conductor.modulationIndexA))")
+                        Slider(value: $conductor.operators[a].modulatingMultiplier, in: 0.1...10)
+                        Text("Mod. Index: \(Int(conductor.operators[a].modulationIndex))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulationIndexA, in: 0...100)
-                        Text("Amp: \(String(format: "%.2f", conductor.amplitudeA))")
+                        Slider(value: $conductor.operators[a].modulationIndex, in: 0...100)
+                        Text("Amp: \(String(format: "%.2f", conductor.operators[a].amplitude))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.amplitudeA, in: 0...1)
+                        Slider(value: $conductor.operators[a].amplitude, in: 0...1)
                     }
                     VStack {
                         Text("Operator B")
@@ -52,21 +54,20 @@ struct OperatorView: View {
                             .padding(.top)
                             .padding(.bottom)
                         
-                        Text("Mod.Frequency: \(Int(conductor.modulatingFrequencyB)) Hz")
-                            .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingFrequencyB, in: 20...2000)
+                        let b = 1
                         
-                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.modulatingMultiplierB))")
+                        Text("Mod.Frequency: \(Int(conductor.operators[b].modulatingFrequency))) Hz")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingMultiplierB, in: 0.1...10)
-                        
-                        Text("Mod. Index: \(Int(conductor.modulationIndexB))")
+                        Slider(value: $conductor.operators[b].modulatingFrequency, in: 20...2000)
+                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.operators[1].modulatingMultiplier))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulationIndexB, in: 0...100)
-                        
-                        Text("Amp: \(String(format: "%.2f", conductor.amplitudeB))")
+                        Slider(value: $conductor.operators[b].modulatingMultiplier, in: 0.1...10)
+                        Text("Mod. Index: \(Int(conductor.operators[b].modulationIndex))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.amplitudeB, in: 0...1)
+                        Slider(value: $conductor.operators[b].modulationIndex, in: 0...100)
+                        Text("Amp: \(String(format: "%.2f", conductor.operators[b].modulationIndex))")
+                            .foregroundColor(.white)
+                        Slider(value: $conductor.operators[b].amplitude, in: 0...1)
                     }
                 }
             } label: {
@@ -94,18 +95,20 @@ struct OperatorView: View {
                             .padding(.top)
                             .padding(.bottom)
                         
-                        Text("Mod. Frequency: \(Int(conductor.modulatingFrequencyC)) Hz")
+                        let c = 2
+                        
+                        Text("Mod.Frequency: \(Int(conductor.operators[c].modulatingFrequency))) Hz")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingFrequencyC, in: 20...2000)
-                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.modulatingMultiplierC))")
+                        Slider(value: $conductor.operators[c].modulatingFrequency, in: 20...2000)
+                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.operators[1].modulatingMultiplier))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingMultiplierC, in: 0.1...10)
-                        Text("Mod. Index: \(Int(conductor.modulationIndexC))")
+                        Slider(value: $conductor.operators[c].modulatingMultiplier, in: 0.1...10)
+                        Text("Mod. Index: \(Int(conductor.operators[c].modulationIndex))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulationIndexC, in: 0...100)
-                        Text("Amp: \(String(format: "%.2f", conductor.amplitudeC))")
+                        Slider(value: $conductor.operators[c].modulationIndex, in: 0...100)
+                        Text("Amp: \(String(format: "%.2f", conductor.operators[c].modulationIndex))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.amplitudeC, in: 0...1)
+                        Slider(value: $conductor.operators[c].amplitude, in: 0...1)
                     }
                     VStack {
                         Text("Operator D")
@@ -114,21 +117,20 @@ struct OperatorView: View {
                             .padding(.top)
                             .padding(.bottom)
                         
-                        Text("Mod.Frequency: \(Int(conductor.modulatingFrequencyD)) Hz")
-                            .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingFrequencyD, in: 20...2000)
+                        let d = 3
                         
-                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.modulatingMultiplierD))")
+                        Text("Mod.Frequency: \(Int(conductor.operators[d].modulatingFrequency))) Hz")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulatingMultiplierD, in: 0.1...10)
-                        
-                        Text("Mod. Index: \(Int(conductor.modulationIndexD))")
+                        Slider(value: $conductor.operators[d].modulatingFrequency, in: 20...2000)
+                        Text("Mod. Multiplier: \(String(format: "%.2f", conductor.operators[1].modulatingMultiplier))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.modulationIndexD, in: 0...100)
-                        
-                        Text("Amp: \(String(format: "%.2f", conductor.amplitudeD))")
+                        Slider(value: $conductor.operators[d].modulatingMultiplier, in: 0.1...10)
+                        Text("Mod. Index: \(Int(conductor.operators[d].modulationIndex))")
                             .foregroundColor(.white)
-                        Slider(value: $conductor.amplitudeD, in: 0...1)
+                        Slider(value: $conductor.operators[d].modulationIndex, in: 0...100)
+                        Text("Amp: \(String(format: "%.2f", conductor.operators[d].modulationIndex))")
+                            .foregroundColor(.white)
+                        Slider(value: $conductor.operators[d].amplitude, in: 0...1)
                     }
                 }
             } label: {

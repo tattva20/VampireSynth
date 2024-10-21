@@ -20,7 +20,7 @@ struct OperatorView: View {
     @State private var isRowCDCollapsed = false
 
     // Custom bindings for operator properties
-    private func synthOperator(_ index: Int) -> (Binding<Float>, Binding<Float>, Binding<Float>, Binding<Float>) {
+    private func parametersForOperator(_ index: Int) -> (Binding<Float>, Binding<Float>, Binding<Float>, Binding<Float>) {
         (
             $conductor.operators[index].modulatingFrequency,
             $conductor.operators[index].modulatingMultiplier,
@@ -34,8 +34,8 @@ struct OperatorView: View {
             // Operator A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isRowABCollapsed) {
                 HStack {
-                    let (modFreqA, modMultA, modIndexA, ampA) = synthOperator(a)
-                    let (modFreqB, modMultB, modIndexB, ampB) = synthOperator(b)
+                    let (modFreqA, modMultA, modIndexA, ampA) = parametersForOperator(a)
+                    let (modFreqB, modMultB, modIndexB, ampB) = parametersForOperator(b)
                     OperatorControlView(
                         title: "Operator A",
                         modulatingFrequency: modFreqA,
@@ -69,8 +69,8 @@ struct OperatorView: View {
             // Operator C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isRowCDCollapsed) {
                 HStack {
-                    let (modFreqC, modMultC, modIndexC, ampC) = synthOperator(c)
-                    let (modFreqD, modMultD, modIndexD, ampD) = synthOperator(d)
+                    let (modFreqC, modMultC, modIndexC, ampC) = parametersForOperator(c)
+                    let (modFreqD, modMultD, modIndexD, ampD) = parametersForOperator(d)
                     OperatorControlView(
                         title: "Operator C",
                         modulatingFrequency: modFreqC,

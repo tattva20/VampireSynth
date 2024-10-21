@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import AudioKitUI
-
 
 struct AmplitudeEnvelopeView: View {
     @ObservedObject var conductor: AmplitudeEnvelopeConductor
@@ -21,37 +19,10 @@ struct AmplitudeEnvelopeView: View {
             // Envelope A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeABCollapsed) {
                 HStack {
-                    VStack {
-                        Text("Amplitude Envelope A")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        ADSRWidget { att, dec, sus, rel in
-                            
-                            let a = 0
-                            let envelopeA = conductor.envelopes[a]
-                            
-                            envelopeA.attackDuration = att
-                            envelopeA.decayDuration = dec
-                            envelopeA.sustainLevel = sus
-                            envelopeA.releaseDuration = rel
-                        }
-                    }
-                    
-                    VStack {
-                        Text("Amplitude Envelope B")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        ADSRWidget { att, dec, sus, rel in
-                            
-                            let b = 1
-                            let envelopeB = conductor.envelopes[b]
-                            
-                            envelopeB.attackDuration = att
-                            envelopeB.decayDuration = dec
-                            envelopeB.sustainLevel = sus
-                            envelopeB.releaseDuration = rel
-                        }
-                    }
+                    let a = 0
+                    let b = 1
+                    ADSRWidgetView(title: "Amplitude Envelope A", envelope: $conductor.envelopes[a])
+                    ADSRWidgetView(title: "Amplitude Envelope B", envelope: $conductor.envelopes[b])
                 }
             } label: {
                 HStack {
@@ -71,37 +42,10 @@ struct AmplitudeEnvelopeView: View {
             // Envelope C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeCDCollapsed) {
                 HStack {
-                    VStack {
-                        Text("Amplitude Envelope C")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        ADSRWidget { att, dec, sus, rel in
-                            
-                            let c = 2
-                            let envelopeC = conductor.envelopes[c]
-                            
-                            envelopeC.attackDuration = att
-                            envelopeC.decayDuration = dec
-                            envelopeC.sustainLevel = sus
-                            envelopeC.releaseDuration = rel
-                        }
-                    }
-                    
-                    VStack {
-                        Text("Amplitude Envelope D")
-                            .font(.title)
-                            .foregroundColor(.white)
-                        ADSRWidget { att, dec, sus, rel in
-                            
-                            let d = 3
-                            let envelopeD = conductor.envelopes[d]
-                            
-                            envelopeD.attackDuration = att
-                            envelopeD.decayDuration = dec
-                            envelopeD.sustainLevel = sus
-                            envelopeD.releaseDuration = rel
-                        }
-                    }
+                    let c = 2
+                    let d = 3
+                    ADSRWidgetView(title: "Amplitude Envelope C", envelope: $conductor.envelopes[c])
+                    ADSRWidgetView(title: "Amplitude Envelope D", envelope: $conductor.envelopes[d])
                 }
             } label: {
                 HStack {

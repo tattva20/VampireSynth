@@ -6,7 +6,6 @@ import SoundpipeAudioKit
 import SwiftUI
 
 struct ContentView: View {
-
     @State private var frequency: Float = 440.0
     @State private var modulationIndex: Float = 1.0
     @State private var carrierMultiplier: Float = 1.0

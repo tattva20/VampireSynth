@@ -12,7 +12,6 @@ import SwiftUI
 import Tonic
 
 class AmplitudeEnvelopeConductor: ObservableObject, HasAudioEngine {
-
     let engine = AudioEngine()
     let operatorConductor: OperatorConductor
     var envelopes: [AmplitudeEnvelope]

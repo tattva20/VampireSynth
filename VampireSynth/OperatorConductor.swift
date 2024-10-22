@@ -11,7 +11,6 @@ import SwiftUI
 import Tonic
 
 class OperatorConductor: ObservableObject {
-    
     class FMOscillatorWrapper {
         var fmOscillator: FMOscillator
         @Published var carrierFrequency: AUValue = 440 {

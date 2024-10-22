@@ -20,7 +20,6 @@ struct AmplitudeEnvelopeView: View {
             // Envelope A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeABCollapsed) {
                 HStack {
-                    // Envelope A and B section with collapse functionality
                     ADSRWidgetView(title: "Amplitude Envelope A", envelope: envelopeFor(Operator.a))
                     ADSRWidgetView(title: "Amplitude Envelope B", envelope: envelopeFor(Operator.b))
                 }

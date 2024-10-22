@@ -14,19 +14,15 @@ struct AmplitudeEnvelopeView: View {
     
     @State private var isEnvelopeABCollapsed = false
     @State private var isEnvelopeCDCollapsed = false
-    
-    private func envelopeForOperator(_ index: Int) -> Binding<AmplitudeEnvelope> {
-        return $conductor.envelopes[index]
-    }
-    
+
     var body: some View {
         VStack {
             // Envelope A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeABCollapsed) {
                 HStack {
 
-                    ADSRWidgetView(title: "Amplitude Envelope A", envelope: envelopeForOperator(a))
-                    ADSRWidgetView(title: "Amplitude Envelope B", envelope: envelopeForOperator(b))
+                    ADSRWidgetView(title: "Amplitude Envelope A", envelope: envelopeFor(Operator.a))
+                    ADSRWidgetView(title: "Amplitude Envelope B", envelope: envelopeFor(Operator.b))
                 }
             } label: {
                 HStack {
@@ -46,8 +42,8 @@ struct AmplitudeEnvelopeView: View {
             // Envelope C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isEnvelopeCDCollapsed) {
                 HStack {
-                    ADSRWidgetView(title: "Amplitude Envelope C", envelope: envelopeForOperator(c))
-                    ADSRWidgetView(title: "Amplitude Envelope D", envelope: envelopeForOperator(d))
+                    ADSRWidgetView(title: "Amplitude Envelope C", envelope: envelopeFor(Operator.c))
+                    ADSRWidgetView(title: "Amplitude Envelope D", envelope: envelopeFor(Operator.d))
                 }
             } label: {
                 HStack {
@@ -66,6 +62,12 @@ struct AmplitudeEnvelopeView: View {
         .padding()
         .background(Color.clear)
         .accessibilityElement(children: .contain)
+    }
+    
+    // MARK: - Helpers
+
+    private func envelopeFor(_ index: Int) -> Binding<AmplitudeEnvelope> {
+        return $conductor.envelopes[index]
     }
 }
 

@@ -18,24 +18,14 @@ struct OperatorView: View {
     
     @State private var isRowABCollapsed = false
     @State private var isRowCDCollapsed = false
-
-    // Custom bindings for operator properties
-    private func parametersForOperator(_ index: Int) -> (Binding<Float>, Binding<Float>, Binding<Float>, Binding<Float>) {
-        (
-            $conductor.operators[index].modulatingFrequency,
-            $conductor.operators[index].modulatingMultiplier,
-            $conductor.operators[index].modulationIndex,
-            $conductor.operators[index].amplitude
-        )
-    }
     
     var body: some View {
         VStack {
             // Operator A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isRowABCollapsed) {
                 HStack {
-                    let (modFreqA, modMultA, modIndexA, ampA) = parametersForOperator(a)
-                    let (modFreqB, modMultB, modIndexB, ampB) = parametersForOperator(b)
+                    let (modFreqA, modMultA, modIndexA, ampA) = parametersFor(Operator.a)
+                    let (modFreqB, modMultB, modIndexB, ampB) = parametersFor(Operator.b)
                     OperatorControlView(
                         title: "Operator A",
                         modulatingFrequency: modFreqA,
@@ -69,8 +59,8 @@ struct OperatorView: View {
             // Operator C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isRowCDCollapsed) {
                 HStack {
-                    let (modFreqC, modMultC, modIndexC, ampC) = parametersForOperator(c)
-                    let (modFreqD, modMultD, modIndexD, ampD) = parametersForOperator(d)
+                    let (modFreqC, modMultC, modIndexC, ampC) = parametersFor(Operator.c)
+                    let (modFreqD, modMultD, modIndexD, ampD) = parametersFor(Operator.d)
                     OperatorControlView(
                         title: "Operator C",
                         modulatingFrequency: modFreqC,
@@ -107,6 +97,17 @@ struct OperatorView: View {
             .foregroundColor(.white)
         Stepper(value: $conductor.octaveShift, in: -2...3) {}
         .accessibilityLabel("Octave Shift")
+    }
+    
+    // MARK: - Helpers
+    
+    private func parametersFor(_ index: Int) -> (Binding<Float>, Binding<Float>, Binding<Float>, Binding<Float>) {
+        (
+            $conductor.operators[index].modulatingFrequency,
+            $conductor.operators[index].modulatingMultiplier,
+            $conductor.operators[index].modulationIndex,
+            $conductor.operators[index].amplitude
+        )
     }
 }
 

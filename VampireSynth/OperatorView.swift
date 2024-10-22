@@ -24,21 +24,21 @@ struct OperatorView: View {
             // Operator A and B section with collapse functionality
             DisclosureGroup(isExpanded: $isRowABCollapsed) {
                 HStack {
-                    let (modFreqA, modMultA, modIndexA, ampA) = parametersFor(Operator.a)
-                    let (modFreqB, modMultB, modIndexB, ampB) = parametersFor(Operator.b)
+                    let paramsA = parametersFor(Operator.a)
+                    let paramsB = parametersFor(Operator.b)
                     OperatorControlView(
                         title: "Operator A",
-                        modulatingFrequency: modFreqA,
-                        modulatingMultiplier: modMultA,
-                        modulationIndex: modIndexA,
-                        amplitude: ampA
+                        modulatingFrequency: paramsA.modulatingFrequency,
+                        modulatingMultiplier: paramsA.modulatingMultiplier,
+                        modulationIndex: paramsA.modulationIndex,
+                        amplitude: paramsA.amplitude
                     )
                     OperatorControlView(
                         title: "Operator B",
-                        modulatingFrequency: modFreqB,
-                        modulatingMultiplier: modMultB,
-                        modulationIndex: modIndexB,
-                        amplitude: ampB
+                        modulatingFrequency: paramsB.modulatingFrequency,
+                        modulatingMultiplier: paramsB.modulatingMultiplier,
+                        modulationIndex: paramsB.modulationIndex,
+                        amplitude: paramsB.amplitude
                     )
                 }
             } label: {
@@ -59,21 +59,21 @@ struct OperatorView: View {
             // Operator C and D section with collapse functionality
             DisclosureGroup(isExpanded: $isRowCDCollapsed) {
                 HStack {
-                    let (modFreqC, modMultC, modIndexC, ampC) = parametersFor(Operator.c)
-                    let (modFreqD, modMultD, modIndexD, ampD) = parametersFor(Operator.d)
+                    let paramsC = parametersFor(Operator.c)
+                    let paramsD = parametersFor(Operator.d)
                     OperatorControlView(
                         title: "Operator C",
-                        modulatingFrequency: modFreqC,
-                        modulatingMultiplier: modMultC,
-                        modulationIndex: modIndexC,
-                        amplitude: ampC
+                        modulatingFrequency: paramsC.modulatingFrequency,
+                        modulatingMultiplier: paramsC.modulatingMultiplier,
+                        modulationIndex: paramsC.modulationIndex,
+                        amplitude: paramsC.amplitude
                     )
                     OperatorControlView(
                         title: "Operator D",
-                        modulatingFrequency: modFreqD,
-                        modulatingMultiplier: modMultD,
-                        modulationIndex: modIndexD,
-                        amplitude: ampD
+                        modulatingFrequency: paramsD.modulatingFrequency,
+                        modulatingMultiplier: paramsD.modulatingMultiplier,
+                        modulationIndex: paramsD.modulationIndex,
+                        amplitude: paramsD.amplitude
                     )
                 }
             } label: {
@@ -101,12 +101,12 @@ struct OperatorView: View {
     
     // MARK: - Helpers
     
-    private func parametersFor(_ index: Int) -> (Binding<Float>, Binding<Float>, Binding<Float>, Binding<Float>) {
-        (
-            $conductor.operators[index].modulatingFrequency,
-            $conductor.operators[index].modulatingMultiplier,
-            $conductor.operators[index].modulationIndex,
-            $conductor.operators[index].amplitude
+    private func parametersFor(_ index: Int) -> OperatorParameters {
+        OperatorParameters(
+            modulatingFrequency: $conductor.operators[index].modulatingFrequency,
+            modulatingMultiplier: $conductor.operators[index].modulatingMultiplier,
+            modulationIndex: $conductor.operators[index].modulationIndex,
+            amplitude: $conductor.operators[index].amplitude
         )
     }
 }

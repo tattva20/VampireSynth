@@ -11,7 +11,7 @@ import SoundpipeAudioKit
 
 struct ADSRWidgetView: View {
     let title: String
-    @Binding var envelope: AmplitudeEnvelope
+    @Binding var env: AmplitudeEnvelope
 
     var body: some View {
         VStack {
@@ -19,10 +19,10 @@ struct ADSRWidgetView: View {
                 .font(.title)
                 .foregroundColor(.white)
             ADSRWidget { att, dec, sus, rel in
-                envelope.attackDuration = att
-                envelope.decayDuration = dec
-                envelope.sustainLevel = sus
-                envelope.releaseDuration = rel
+                env.attackDuration = att
+                env.decayDuration = dec
+                env.sustainLevel = sus
+                env.releaseDuration = rel
             }
         }
     }

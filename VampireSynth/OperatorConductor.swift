@@ -5,10 +5,9 @@
 //  Created by Octavio Rojas on 9/1/24.
 //
 
-import AudioKit
+import Foundation
 import SoundpipeAudioKit
-import SwiftUI
-import Tonic
+import AudioToolbox
 
 class OperatorConductor: ObservableObject {
     class FMOscillatorWrapper {

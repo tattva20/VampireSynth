@@ -8,20 +8,24 @@
 import SwiftUI
 import SoundpipeAudioKit
 
-struct AmplitudeEnvelopeView: View {
-    @ObservedObject var conductor: AmplitudeEnvelopeConductor
+struct AmpEnvView: View {
+    @ObservedObject var conductor: AmpEnvConductor
     @Environment(\.colorScheme) var colorScheme
     
-    @State private var isEnvelopeABCollapsed = false
-    @State private var isEnvelopeCDCollapsed = false
+    @State private var isEnvGroupABCollapsed = false
+    @State private var isEnvGroupCDCollapsed = false
 
     var body: some View {
         VStack {
             // Envelope A and B section with collapse functionality
-            DisclosureGroup(isExpanded: $isEnvelopeABCollapsed) {
+            DisclosureGroup(isExpanded: $isEnvGroupABCollapsed) {
                 HStack {
-                    ADSRWidgetView(title: "Amplitude Envelope A", envelope: envelopeFor(Operator.a))
-                    ADSRWidgetView(title: "Amplitude Envelope B", envelope: envelopeFor(Operator.b))
+                    ADSRWidgetView(
+                        title: "Amp Env A",
+                        env: envFor(Operator.a))
+                    ADSRWidgetView(
+                        title: "Amp Env B",
+                        env: envFor(Operator.b))
                 }
             } label: {
                 HStack {
@@ -31,7 +35,7 @@ struct AmplitudeEnvelopeView: View {
                     Spacer()
                     Image(systemName: "chevron.up")
                         .foregroundColor(.white)
-                        .rotationEffect(.degrees(isEnvelopeABCollapsed ? 0 : 180))
+                        .rotationEffect(.degrees(isEnvGroupABCollapsed ? 0 : 180))
                 }
                 .padding()
                 .background(Color.gray.opacity(0.2))
@@ -39,10 +43,14 @@ struct AmplitudeEnvelopeView: View {
             .padding(.bottom)
             
             // Envelope C and D section with collapse functionality
-            DisclosureGroup(isExpanded: $isEnvelopeCDCollapsed) {
+            DisclosureGroup(isExpanded: $isEnvGroupCDCollapsed) {
                 HStack {
-                    ADSRWidgetView(title: "Amplitude Envelope C", envelope: envelopeFor(Operator.c))
-                    ADSRWidgetView(title: "Amplitude Envelope D", envelope: envelopeFor(Operator.d))
+                    ADSRWidgetView(
+                        title: "Amp Env C",
+                        env: envFor(Operator.c))
+                    ADSRWidgetView(
+                        title: "Amp Env D",
+                        env: envFor(Operator.d))
                 }
             } label: {
                 HStack {
@@ -52,7 +60,7 @@ struct AmplitudeEnvelopeView: View {
                     Spacer()
                     Image(systemName: "chevron.up")
                         .foregroundColor(.white)
-                        .rotationEffect(.degrees(isEnvelopeCDCollapsed ? 0 : 180))
+                        .rotationEffect(.degrees(isEnvGroupCDCollapsed ? 0 : 180))
                 }
                 .padding()
                 .background(Color.gray.opacity(0.2))
@@ -65,13 +73,13 @@ struct AmplitudeEnvelopeView: View {
     
     // MARK: - Helpers
 
-    private func envelopeFor(_ index: Int) -> Binding<AmplitudeEnvelope> {
-        return $conductor.envelopes[index]
+    private func envFor(_ index: Int) -> Binding<AmplitudeEnvelope> {
+        return $conductor.envs[index]
     }
 }
 
 #Preview {
     let operatorConductor = OperatorConductor()
-    let amplitudeEnvelopeConductor = AmplitudeEnvelopeConductor(operatorConductor: operatorConductor)
-    return AmplitudeEnvelopeView(conductor: amplitudeEnvelopeConductor)
+    let amplitudeEnvelopeConductor = AmpEnvConductor(operatorConductor: operatorConductor)
+    return AmpEnvView(conductor: amplitudeEnvelopeConductor)
 }

@@ -25,8 +25,8 @@
 		6ECA33C22CC70B5400E641CE /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECA33C12CC70B4E00E641CE /* Operator.swift */; };
 		6EEEB2A62C85185200E1E8FC /* OperatorConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A52C85185200E1E8FC /* OperatorConductor.swift */; };
 		6EEEB2A82C8518DA00E1E8FC /* OperatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A72C8518DA00E1E8FC /* OperatorView.swift */; };
-		6EEEB2AA2C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A92C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift */; };
-		6EEEB2AE2C85298400E1E8FC /* AmplitudeEnvelopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2AD2C85298400E1E8FC /* AmplitudeEnvelopeView.swift */; };
+		6EEEB2AA2C8526B200E1E8FC /* AmpEnvConductor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2A92C8526B200E1E8FC /* AmpEnvConductor.swift */; };
+		6EEEB2AE2C85298400E1E8FC /* AmpEnvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEEB2AD2C85298400E1E8FC /* AmpEnvView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,8 @@
 		6ECA33C12CC70B4E00E641CE /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		6EEEB2A52C85185200E1E8FC /* OperatorConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorConductor.swift; sourceTree = "<group>"; };
 		6EEEB2A72C8518DA00E1E8FC /* OperatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorView.swift; sourceTree = "<group>"; };
-		6EEEB2A92C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeEnvelopeConductor.swift; sourceTree = "<group>"; };
-		6EEEB2AD2C85298400E1E8FC /* AmplitudeEnvelopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeEnvelopeView.swift; sourceTree = "<group>"; };
+		6EEEB2A92C8526B200E1E8FC /* AmpEnvConductor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpEnvConductor.swift; sourceTree = "<group>"; };
+		6EEEB2AD2C85298400E1E8FC /* AmpEnvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmpEnvView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +124,8 @@
 				6E2FFFBB2C850BE900FD9BC9 /* ContentView.swift */,
 				6E2FBDC22C8540BA00854FB3 /* VampireKeyboardView.swift */,
 				6EEEB2A52C85185200E1E8FC /* OperatorConductor.swift */,
-				6EEEB2A92C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift */,
-				6EEEB2AD2C85298400E1E8FC /* AmplitudeEnvelopeView.swift */,
+				6EEEB2A92C8526B200E1E8FC /* AmpEnvConductor.swift */,
+				6EEEB2AD2C85298400E1E8FC /* AmpEnvView.swift */,
 				6ECA33BD2CC7028A00E641CE /* ADSRWidgetView.swift */,
 				6EEEB2A72C8518DA00E1E8FC /* OperatorView.swift */,
 				6ECA33BF2CC7044200E641CE /* OperatorControlView.swift */,
@@ -314,8 +314,8 @@
 				6EEEB2A62C85185200E1E8FC /* OperatorConductor.swift in Sources */,
 				6ECA33C02CC7044600E641CE /* OperatorControlView.swift in Sources */,
 				6E2FFFBC2C850BE900FD9BC9 /* VampireSynthApp.swift in Sources */,
-				6EEEB2AE2C85298400E1E8FC /* AmplitudeEnvelopeView.swift in Sources */,
-				6EEEB2AA2C8526B200E1E8FC /* AmplitudeEnvelopeConductor.swift in Sources */,
+				6EEEB2AE2C85298400E1E8FC /* AmpEnvView.swift in Sources */,
+				6EEEB2AA2C8526B200E1E8FC /* AmpEnvConductor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

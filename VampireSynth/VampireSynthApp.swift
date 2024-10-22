@@ -11,14 +11,21 @@ import SwiftUI
 
 @main
 struct VampireSynthApp: App {
+    
+    private let session = AVAudioSession.sharedInstance()
+    
     init() {
         #if os(iOS)
             do {
                 Settings.bufferLength = .short
-                try AVAudioSession.sharedInstance().setPreferredIOBufferDuration(Settings.bufferLength.duration)
-                try AVAudioSession.sharedInstance().setCategory(.playAndRecord,
-                                                                options: [.defaultToSpeaker, .mixWithOthers, .allowBluetoothA2DP])
-                try AVAudioSession.sharedInstance().setActive(true)
+                try session.setPreferredIOBufferDuration(Settings.bufferLength.duration)
+                try session.setCategory(
+                    .playAndRecord,
+                    options:
+                        [.defaultToSpeaker,
+                         .mixWithOthers,
+                         .allowBluetoothA2DP])
+                try session.setActive(true)
             } catch let err {
                 print(err)
             }

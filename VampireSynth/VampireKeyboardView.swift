@@ -5,23 +5,19 @@
 //  Created by Octavio Rojas on 9/1/24.
 //
 
-import AudioKit
 import SwiftUI
-import Keyboard
 import Tonic
-
-import AudioKit
-import SwiftUI
 import Keyboard
-import Tonic
 
 struct VampireKeyboardView: View {
     var noteOn: (Pitch, CGPoint) -> Void = { _, _ in }
     var noteOff: (Pitch) -> Void
     
     var body: some View {
-        Keyboard(layout: .piano(pitchRange: Pitch(36) ... Pitch(83)),
-                 noteOn: noteOn, noteOff: noteOff)
+        Keyboard(
+            layout: .piano(pitchRange: Pitch(36) ... Pitch(83)),
+            noteOn: noteOn,
+            noteOff: noteOff)
         .padding()
         .background(Color.clear) // Allows keyboard events to pass through
     }
@@ -30,11 +26,16 @@ struct VampireKeyboardView: View {
 struct MIDIKitKeyboard: View {
     var noteOn: (Pitch, CGPoint) -> Void = { _, _ in }
     var noteOff: (Pitch) -> Void
+    
     var body: some View {
-        Keyboard(layout: .piano(pitchRange: Pitch(36) ... Pitch(83)),
-                 noteOn: noteOn, noteOff: noteOff){ pitch, isActivated in
-            MIDIKitKeyboardKey(pitch: pitch,
-                               isActivated: isActivated, color: .red)
+        Keyboard(
+            layout: .piano(pitchRange: Pitch(36) ... Pitch(83)),
+            noteOn: noteOn,
+            noteOff: noteOff){ pitch, isActivated in
+            MIDIKitKeyboardKey(
+                pitch: pitch,
+                isActivated: isActivated,
+                color: .red)
         }.cornerRadius(5)
     }
 }

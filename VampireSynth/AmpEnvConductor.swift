@@ -1,5 +1,5 @@
 //
-//  AmplitudeEnvelopeConductor.swift
+//  AmpEnvConductor.swift
 //  VampireSynth
 //
 //  Created by Octavio Rojas on 9/1/24.
@@ -7,21 +7,22 @@
 
 import AudioKit
 import AudioKitEX
+import Foundation
 import SoundpipeAudioKit
-import SwiftUI
 import Tonic
 
-class AmplitudeEnvelopeConductor: ObservableObject, HasAudioEngine {
-    let engine = AudioEngine()
+class AmpEnvConductor: ObservableObject, HasAudioEngine {
+    let engine: AudioEngine
     let operatorConductor: OperatorConductor
-    var envelopes: [AmplitudeEnvelope]
+    var envs: [AmplitudeEnvelope]
     var faders: [Fader]
     var currentNote = 0
 
-    init(operatorConductor: OperatorConductor) {
+    init(operatorConductor: OperatorConductor, engine: AudioEngine = AudioEngine()) {
         self.operatorConductor = operatorConductor
-        self.envelopes = operatorConductor.operators.map { AmplitudeEnvelope($0.fmOscillator) }
-        self.faders = envelopes.map { Fader($0) }
+        self.envs = operatorConductor.operators.map { AmplitudeEnvelope($0.fmOscillator) }
+        self.faders = envs.map { Fader($0) }
+        self.engine = engine
 
         operatorConductor.operators.forEach { $0.amplitude = 1 }
         engine.output = Mixer(faders)
@@ -36,14 +37,14 @@ class AmplitudeEnvelopeConductor: ObservableObject, HasAudioEngine {
     func noteOn(pitch: Pitch, point _: CGPoint) {
         let adjustedMidiNoteNumber = pitch.midiNoteNumber + (12 * operatorConductor.octaveShift)
         if adjustedMidiNoteNumber != currentNote {
-            envelopes.forEach { $0.closeGate() }
+            envs.forEach { $0.closeGate() }
         }
         operatorConductor.setFrequency(for: adjustedMidiNoteNumber)
-        envelopes.forEach { $0.openGate() }
+        envs.forEach { $0.openGate() }
         operatorConductor.play()
     }
 
     func noteOff(pitch _: Pitch) {
-        envelopes.forEach { $0.closeGate() }
+        envs.forEach { $0.closeGate() }
     }
 }

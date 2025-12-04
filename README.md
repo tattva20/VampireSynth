@@ -1,6 +1,18 @@
 # Vampire Synth
 
-A 4-operator FM synthesizer for iOS built with **AudioKit** and **SwiftUI**, featuring Clean Architecture and comprehensive test coverage.
+<p align="center">
+  <a href="https://github.com/tattva20/VampireSynth/actions/workflows/ci.yml">
+    <img src="https://github.com/tattva20/VampireSynth/actions/workflows/ci.yml/badge.svg" alt="CI">
+  </a>
+  <img src="https://img.shields.io/badge/Platform-iOS%2017.5%2B-blue.svg" alt="Platform: iOS 17.5+">
+  <img src="https://img.shields.io/badge/Swift-5-orange.svg" alt="Swift 5">
+  <img src="https://img.shields.io/badge/AudioKit-5.6-purple.svg" alt="AudioKit 5.6">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT">
+</p>
+
+<p align="center">
+  A 4-operator FM synthesizer for iOS built with <strong>AudioKit</strong> and <strong>SwiftUI</strong>, featuring <strong>Clean Architecture</strong>, <strong>TDD</strong>, and comprehensive test coverage (60+ tests).
+</p>
 
 ## Table of Contents
 

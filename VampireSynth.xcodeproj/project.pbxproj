@@ -48,6 +48,8 @@
 		EC3C071C0E50424CB3EE505D /* MIDINoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C071C0E50424CB3EE505E /* MIDINoteTests.swift */; };
 		5FE977147BA14DF0A90A8C0D /* OperatorConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE977147BA14DF0A90A8C0E /* OperatorConfigurationTests.swift */; };
 		80748C36FC5F419D8400543D /* EnvelopeConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80748C36FC5F419D8400543E /* EnvelopeConfigurationTests.swift */; };
+		INTEG001AAAA11111111111 /* AudioKitIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = INTEG001AAAA11111111112 /* AudioKitIntegrationTests.swift */; };
+		ACCEP001BBBB22222222221 /* SynthAcceptanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCEP001BBBB22222222222 /* SynthAcceptanceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		EC3C071C0E50424CB3EE505E /* MIDINoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MIDINoteTests.swift; sourceTree = "<group>"; };
 		5FE977147BA14DF0A90A8C0E /* OperatorConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorConfigurationTests.swift; sourceTree = "<group>"; };
 		80748C36FC5F419D8400543E /* EnvelopeConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvelopeConfigurationTests.swift; sourceTree = "<group>"; };
+		INTEG001AAAA11111111112 /* AudioKitIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioKitIntegrationTests.swift; sourceTree = "<group>"; };
+		ACCEP001BBBB22222222222 /* SynthAcceptanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthAcceptanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				5288A2609A804E828A4D3C3E /* Helpers */,
+				INTEG001AAAA33333333333 /* Integration */,
+				ACCEP001BBBB44444444444 /* Acceptance */,
 				6E2C19052C818DB600CADD9F /* VampireSynthTests.swift */,
 				E6C118D9311545D1AFD297EE /* SynthControllerTests.swift */,
 				EC3C071C0E50424CB3EE505E /* MIDINoteTests.swift */,
@@ -199,6 +205,22 @@
 				80748C36FC5F419D8400543E /* EnvelopeConfigurationTests.swift */,
 			);
 			path = VampireSynthTests;
+			sourceTree = "<group>";
+		};
+		INTEG001AAAA33333333333 /* Integration */ = {
+			isa = PBXGroup;
+			children = (
+				INTEG001AAAA11111111112 /* AudioKitIntegrationTests.swift */,
+			);
+			path = Integration;
+			sourceTree = "<group>";
+		};
+		ACCEP001BBBB44444444444 /* Acceptance */ = {
+			isa = PBXGroup;
+			children = (
+				ACCEP001BBBB22222222222 /* SynthAcceptanceTests.swift */,
+			);
+			path = Acceptance;
 			sourceTree = "<group>";
 		};
 		6E2C190E2C818DB700CADD9F /* VampireSynthUITests */ = {
@@ -432,6 +454,8 @@
 				EC3C071C0E50424CB3EE505D /* MIDINoteTests.swift in Sources */,
 				5FE977147BA14DF0A90A8C0D /* OperatorConfigurationTests.swift in Sources */,
 				80748C36FC5F419D8400543D /* EnvelopeConfigurationTests.swift in Sources */,
+				INTEG001AAAA11111111111 /* AudioKitIntegrationTests.swift in Sources */,
+				ACCEP001BBBB22222222221 /* SynthAcceptanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

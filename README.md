@@ -48,21 +48,10 @@ The app is built with a protocol-oriented Clean Architecture approach, making it
 
 FM synthesis creates complex waveforms by using one oscillator (the **modulator**) to modulate the frequency of another oscillator (the **carrier**). Unlike subtractive synthesis which filters harmonically rich waveforms, FM synthesis builds complexity through frequency modulation.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    FM SYNTHESIS BASICS                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   ┌──────────────┐                                          │
-│   │  MODULATOR   │ ──── Frequency ────┐                     │
-│   │  Oscillator  │                    │                     │
-│   └──────────────┘                    ▼                     │
-│                              ┌──────────────┐               │
-│                              │   CARRIER    │ ──► Audio Out │
-│                              │  Oscillator  │               │
-│                              └──────────────┘               │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    M["🎛️ Modulator<br/>Oscillator"] -->|modulates frequency| C["🔊 Carrier<br/>Oscillator"]
+    C --> OUT["🎧 Audio Out"]
 ```
 
 ### Key Parameters
@@ -80,16 +69,17 @@ FM synthesis creates complex waveforms by using one oscillator (the **modulator*
 
 The output of an FM oscillator can be expressed as:
 
-```
-output(t) = A × sin(2π × fc × t + I × sin(2π × fm × t))
+$$
+\text{output}(t) = A \cdot \sin\!\big(2\pi f_c\, t + I \cdot \sin(2\pi f_m\, t)\big)
+$$
 
-Where:
-  A  = Amplitude
-  fc = Carrier frequency
-  fm = Modulator frequency
-  I  = Modulation index
-  t  = Time
-```
+| Symbol | Meaning |
+|--------|---------|
+| $A$ | Amplitude |
+| $f_c$ | Carrier frequency |
+| $f_m$ | Modulator frequency |
+| $I$ | Modulation index |
+| $t$ | Time |
 
 ### Harmonic Ratios
 
@@ -111,64 +101,39 @@ Vampire Synth follows **Clean Architecture** principles with a protocol-oriented
 
 ### Layer Diagram
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        PRESENTATION LAYER                        │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐              │
-│  │ ContentView │  │OperatorView │  │  AmpEnvView │  SwiftUI     │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘              │
-│         │                │                │                      │
-│  ┌──────▼──────┐  ┌──────▼──────────────▼──────┐                │
-│  │  Operator   │  │      AmpEnvConductor       │  Conductors    │
-│  │  Conductor  │  │    (HasAudioEngine)        │  (ViewModels)  │
-│  └──────┬──────┘  └─────────────┬──────────────┘                │
-└─────────┼───────────────────────┼───────────────────────────────┘
-          │                       │
-          ▼                       ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                         ENGINE LAYER                             │
-│                    (Domain / Use Cases)                          │
-│                                                                  │
-│  ┌─────────────────────────────────────────────────────────┐    │
-│  │                    SynthController                       │    │
-│  │  • noteOn(MIDINote)    • updateOperator(id, config)     │    │
-│  │  • noteOff()           • updateEnvelope(id, config)     │    │
-│  │  • start() / stop()    • setMasterVolume(Float)         │    │
-│  └─────────────────────────────────────────────────────────┘    │
-│                              │                                   │
-│         ┌────────────────────┼────────────────────┐             │
-│         ▼                    ▼                    ▼             │
-│  ┌─────────────┐    ┌──────────────┐    ┌─────────────┐        │
-│  │  Protocols  │    │Domain Models │    │   Ranges    │        │
-│  ├─────────────┤    ├──────────────┤    ├─────────────┤        │
-│  │AudioEngine  │    │OperatorConfig│    │OperatorConf │        │
-│  │FMOscillator │    │EnvelopeConfig│    │ igRanges    │        │
-│  │Envelope     │    │MIDINote      │    │EnvelopeConf │        │
-│  │Mixer        │    │              │    │ igRanges    │        │
-│  └─────────────┘    └──────────────┘    └─────────────┘        │
-└─────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│                     INFRASTRUCTURE LAYER                         │
-│                    (AudioKit Adapters)                           │
-│                                                                  │
-│  ┌──────────────────┐  ┌──────────────────┐                     │
-│  │AudioKitEngine    │  │AudioKitFM        │                     │
-│  │    Adapter       │  │OscillatorAdapter │                     │
-│  │                  │  │                  │                     │
-│  │ Wraps AudioKit's │  │ Wraps AudioKit's │                     │
-│  │   AudioEngine    │  │   FMOscillator   │                     │
-│  └──────────────────┘  └──────────────────┘                     │
-│                                                                  │
-│  ┌──────────────────┐  ┌──────────────────┐                     │
-│  │AudioKitEnvelope  │  │AudioKitMixer     │                     │
-│  │    Adapter       │  │    Adapter       │                     │
-│  │                  │  │                  │                     │
-│  │ Wraps AudioKit's │  │ Wraps AudioKit's │                     │
-│  │AmplitudeEnvelope │  │     Mixer        │                     │
-│  └──────────────────┘  └──────────────────┘                     │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph PRES["🎨 Presentation Layer · SwiftUI"]
+        direction TB
+        CV[ContentView]
+        OV[OperatorView]
+        AEV[AmpEnvView]
+        OCND[OperatorConductor]
+        AEC["AmpEnvConductor<br/>HasAudioEngine"]
+        CV --> OCND
+        OV --> OCND
+        AEV --> AEC
+    end
+    subgraph ENG["⚙️ Engine Layer · Domain / Use Cases"]
+        direction TB
+        SC["SynthController<br/>noteOn · noteOff · start / stop<br/>updateOperator · updateEnvelope · setMasterVolume"]
+        PROTO["Protocols<br/>AudioEngine · FMOscillator · Envelope · Mixer"]
+        MODELS["Domain Models<br/>OperatorConfiguration · EnvelopeConfiguration · MIDINote"]
+        RANGES["Ranges<br/>OperatorConfigRanges · EnvelopeConfigRanges"]
+        SC --> PROTO
+        SC --> MODELS
+        SC --> RANGES
+    end
+    subgraph INFRA["🔌 Infrastructure Layer · AudioKit Adapters"]
+        direction LR
+        AEA[AudioKitEngineAdapter]
+        AFO[AudioKitFMOscillatorAdapter]
+        AENA[AudioKitEnvelopeAdapter]
+        AMA[AudioKitMixerAdapter]
+    end
+    OCND --> SC
+    AEC --> SC
+    INFRA -. implements .-> PROTO
 ```
 
 ### Design Principles
@@ -224,86 +189,46 @@ public final class SynthController {
 
 ### Audio Signal Chain
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                          AUDIO SIGNAL FLOW                               │
-└─────────────────────────────────────────────────────────────────────────┘
-
-   MIDI Input (Keyboard)
-         │
-         ▼
-   ┌─────────────┐
-   │  MIDINote   │  pitch → frequency conversion
-   │  frequency  │  f = 440 × 2^((pitch-69)/12)
-   └──────┬──────┘
-          │
-          ▼
-   ┌──────────────────────────────────────────────────────────────────┐
-   │                    FOUR PARALLEL OPERATORS                        │
-   │                                                                   │
-   │  ┌─────────────────┐    ┌─────────────────┐                      │
-   │  │   Operator A    │    │   Operator B    │                      │
-   │  │ ┌─────────────┐ │    │ ┌─────────────┐ │                      │
-   │  │ │FMOscillator │ │    │ │FMOscillator │ │                      │
-   │  │ └──────┬──────┘ │    │ └──────┬──────┘ │                      │
-   │  │        ▼        │    │        ▼        │                      │
-   │  │ ┌─────────────┐ │    │ ┌─────────────┐ │                      │
-   │  │ │  Amplitude  │ │    │ │  Amplitude  │ │                      │
-   │  │ │  Envelope   │ │    │ │  Envelope   │ │                      │
-   │  │ │   (ADSR)    │ │    │ │   (ADSR)    │ │                      │
-   │  │ └──────┬──────┘ │    │ └──────┬──────┘ │                      │
-   │  └────────┼────────┘    └────────┼────────┘                      │
-   │           │                      │                                │
-   │  ┌─────────────────┐    ┌─────────────────┐                      │
-   │  │   Operator C    │    │   Operator D    │                      │
-   │  │ ┌─────────────┐ │    │ ┌─────────────┐ │                      │
-   │  │ │FMOscillator │ │    │ │FMOscillator │ │                      │
-   │  │ └──────┬──────┘ │    │ └──────┬──────┘ │                      │
-   │  │        ▼        │    │        ▼        │                      │
-   │  │ ┌─────────────┐ │    │ ┌─────────────┐ │                      │
-   │  │ │  Amplitude  │ │    │ │  Amplitude  │ │                      │
-   │  │ │  Envelope   │ │    │ │  Envelope   │ │                      │
-   │  │ │   (ADSR)    │ │    │ │   (ADSR)    │ │                      │
-   │  │ └──────┬──────┘ │    │ └──────┬──────┘ │                      │
-   │  └────────┼────────┘    └────────┼────────┘                      │
-   │           │                      │                                │
-   └───────────┼──────────────────────┼────────────────────────────────┘
-               │                      │
-               └──────────┬───────────┘
-                          ▼
-                   ┌─────────────┐
-                   │    MIXER    │  Combines all operators
-                   └──────┬──────┘
-                          ▼
-                   ┌─────────────┐
-                   │   FADERS    │  Level control per operator
-                   └──────┬──────┘
-                          ▼
-                   ┌─────────────┐
-                   │   OUTPUT    │  → Speakers/Headphones
-                   └─────────────┘
+```mermaid
+flowchart TB
+    MIDI["🎹 MIDI Input · Keyboard"] --> NOTE["MIDINote<br/>f = 440 × 2^((pitch−69)/12)"]
+    subgraph OA["Operator A"]
+        direction TB
+        OA1[FMOscillator] --> OA2["Amp Envelope · ADSR"]
+    end
+    subgraph OB["Operator B"]
+        direction TB
+        OB1[FMOscillator] --> OB2["Amp Envelope · ADSR"]
+    end
+    subgraph OPC["Operator C"]
+        direction TB
+        OC1[FMOscillator] --> OC2["Amp Envelope · ADSR"]
+    end
+    subgraph OD["Operator D"]
+        direction TB
+        OD1[FMOscillator] --> OD2["Amp Envelope · ADSR"]
+    end
+    NOTE --> OA1 & OB1 & OC1 & OD1
+    OA2 & OB2 & OC2 & OD2 --> MIX["🎚️ Mixer · combines operators"]
+    MIX --> FAD["Faders · per-operator level"] --> OUTP["🔊 Output → Speakers / Headphones"]
 ```
 
 ### ADSR Envelope Stages
 
+```mermaid
+xychart-beta
+    title "ADSR Amplitude Envelope"
+    x-axis "Time" [Start, Attack, Decay, "Sustain", Release]
+    y-axis "Amplitude" 0 --> 1
+    line [0, 1.0, 0.6, 0.6, 0]
 ```
-     Amplitude
-        │
-   1.0  │        ╱╲
-        │       ╱  ╲
-        │      ╱    ╲___________
-   S    │     ╱                 ╲
-        │    ╱                   ╲
-        │   ╱                     ╲
-   0.0  │──╱───────────────────────╲────▶ Time
-        │  │   │         │         │
-           A   D    Sustain        R
 
-   A = Attack:  Time to reach peak (0.001 - 2.0s)
-   D = Decay:   Time to fall to sustain (0.001 - 2.0s)
-   S = Sustain: Level held while key pressed (0.0 - 1.0)
-   R = Release: Time to fade after key release (0.001 - 2.0s)
-```
+| Stage | Meaning | Range |
+|-------|---------|-------|
+| **A** — Attack | Time to reach peak | 0.001 – 2.0 s |
+| **D** — Decay | Time to fall to sustain | 0.001 – 2.0 s |
+| **S** — Sustain | Level held while key pressed | 0.0 – 1.0 |
+| **R** — Release | Time to fade after key release | 0.001 – 2.0 s |
 
 ---
 

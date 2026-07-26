@@ -1,5 +1,7 @@
 # Vampire Synth
 
+<img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/9d5dbcae-7bcb-4768-a800-d68c86a414de" />
+
 <p align="center">
   <a href="https://github.com/tattva20/VampireSynth/actions/workflows/ci.yml">
     <img src="https://github.com/tattva20/VampireSynth/actions/workflows/ci.yml/badge.svg" alt="CI">

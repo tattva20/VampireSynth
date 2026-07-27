@@ -16,8 +16,23 @@
   A 4-operator FM synthesizer for iOS built with <strong>AudioKit</strong> and <strong>SwiftUI</strong>, featuring <strong>Clean Architecture</strong>, <strong>TDD</strong>, and comprehensive test coverage (60+ tests).
 </p>
 
+## How this was built
+
+Commits through 2024 predate any AI collaboration and are hand-written. From December 2025
+onward, this was built with Claude Code as a working collaborator. "AI-assisted" on its own
+says nothing, so here is the split:
+
+**Ideas** were generated in a mixed loop and selected by me. I specified the code,
+constrained it, and decided what merged.
+**The standards** — naming, structure, comment policy, test discipline — are mine, written
+down before the code and enforced against it.
+
+Every commit is authored by me and none carries AI attribution. The history records
+decisions, not keystrokes; this section is the account of what that authorship means here.
+
 ## Table of Contents
 
+- [How this was built](#how-this-was-built)
 - [Overview](#overview)
 - [How FM Synthesis Works](#how-fm-synthesis-works)
 - [Architecture](#architecture)
